@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import os
 
 from main.routes import main
-from .extensions import mongo
+from extensions import mongo
 
 
 load_dotenv()
