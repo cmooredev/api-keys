@@ -1,1 +1,1 @@
-web: gunicorn --chdir ./apiapp app:__init__.py
+web: gunicorn --chdir ./apiapp app:app
