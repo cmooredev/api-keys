@@ -13,7 +13,7 @@ def index():
     return render_template('index.html')
 
 @main.route('/gen_api<id>')
-def index(id):
+def gen_api(id):
     mongodb_client = pymongo.MongoClient(MONGO_URI)
     db = mongodb_client["translatordb"]
     col = db["api_keys"]
