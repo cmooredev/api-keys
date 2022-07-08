@@ -23,5 +23,5 @@ def gen_api(id):
             "id" : id,
             "key": key,
         }
-    result = col.update_one({}, {'$set':specs}, True)
+    result = col.insert_one(specs)
     return render_template('index.html')
