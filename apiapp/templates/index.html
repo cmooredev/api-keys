@@ -131,13 +131,13 @@
   <!-- MAIN CONTENT ENDS HERE -->
 
   <!-- Jquery -->
-  <script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
+  <script src="{{ url_for('static',filename='assets/js/vendor/jquery-3.3.1.min.js') }}"></script>
 
   <!-- Bootstrap Bundle JS -->
-  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ url_for('static',filename='assets/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
   <!-- Main app JS -->
-  <script src="assets/js/app.js"></script>
+  <script src="{{ url_for('static',filename='assets/js/app.js') }}"></script>
 </body>
 
 </html>
