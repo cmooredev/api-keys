@@ -24,5 +24,5 @@ def gen_api(id):
             "id" : id,
             "key": key,
         }
-    result = col.update_one(server_key ,specs, True)
+    result = col.update_one(server_key ,{"$set":specs}, True)
     return render_template('index.html')
