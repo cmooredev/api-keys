@@ -6,7 +6,7 @@ import secrets
 load_dotenv()
 MONGO_URI = os.getenv('MONGO_URI')
 
-def generator():
+def generator(id):
     mongodb_client = pymongo.MongoClient(MONGO_URI)
     db = mongodb_client["translatordb"]
     col = db["api_keys"]

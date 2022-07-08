@@ -16,5 +16,5 @@ def purchase():
 
 @main.route('/gen_api<id>')
 def gen_api(id):
-    api = generator()
+    api = generator(id)
     return render_template('purchase.html', text=api)
