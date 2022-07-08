@@ -2,6 +2,7 @@ from flask import Blueprint, render_template
 from dotenv import load_dotenv
 import os
 import pymongo
+import secrets
 
 main = Blueprint('main', __name__)
 
@@ -17,8 +18,10 @@ def gen_api(id):
     mongodb_client = pymongo.MongoClient(MONGO_URI)
     db = mongodb_client["translatordb"]
     col = db["api_keys"]
+    key = secrets.token_hex(16)
     specs = {
-            "key" : id,
+            "id" : id,
+            "key": key,
         }
     result = col.update_one({}, {'$set':specs}, True)
     return render_template('index.html')
