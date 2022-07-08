@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template
 
-from appapi.extensions import mongo
+from apiapp.extensions import mongo
 
 main = Blueprint('main', __name__)
 
