@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template
 
-from api import generator
+from .api import generator
 
 main = Blueprint('main', __name__)
 
