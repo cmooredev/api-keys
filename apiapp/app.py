@@ -2,8 +2,8 @@ from flask import Flask
 from dotenv import load_dotenv
 import os
 
-from main.routes import main
-from extensions import mongo
+from .main.routes import main
+from .extensions import mongo
 
 
 load_dotenv()
