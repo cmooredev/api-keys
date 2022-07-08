@@ -19,9 +19,10 @@ def gen_api(id):
     db = mongodb_client["translatordb"]
     col = db["api_keys"]
     key = secrets.token_hex(16)
+    server_key = {"id" : id}
     specs = {
             "id" : id,
             "key": key,
         }
-    result = col.insert_one(specs)
+    result = col.update_one(server_key ,specs, True)
     return render_template('index.html')
