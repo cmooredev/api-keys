@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Translatoooor Discord Bot</title>
+
+  <!-- Specify your meta here -->
+  <meta name="author" content="dev">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Google font -->
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='assets/bootstrap/css/bootstrap.min.css') }}">
+
+  <!-- Font Awesome CSS -->
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='assets/fontawesome/css/font-awesome.min.css') }}">
+
+  <!-- Main template styling -->
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='assets/css/style.css') }}">
+  {% block head %}{% endblock %}
+</head>
+
+<!-- Body class only for demo -->
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <a class="navbar-brand" href="#">Translatoooor</a>
+
+  </nav
+
+  <!-- MAIN CONTENT BEGIN HERE -->
+  {% block body %}{% endblock %}
+  <!-- MAIN CONTENT ENDS HERE -->
+
+  <!-- Jquery -->
+  <script src="{{ url_for('static',filename='assets/js/vendor/jquery-3.3.1.min.js') }}"></script>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="{{ url_for('static',filename='assets/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+  <!-- Main app JS -->
+  <script src="{{ url_for('static',filename='assets/js/app.js') }}"></script>
+</body>
+
+</html>

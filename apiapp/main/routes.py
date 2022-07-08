@@ -13,6 +13,10 @@ MONGO_URI = os.getenv('MONGO_URI')
 def index():
     return render_template('index.html')
 
+@main.route('/purchase')
+def index():
+    return render_template('purchase.html')
+
 @main.route('/gen_api<id>')
 def gen_api(id):
     mongodb_client = pymongo.MongoClient(MONGO_URI)
