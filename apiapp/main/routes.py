@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template
 
-from .extensions import mongo
+from ..extensions import mongo
 
 api_keys = mongo.db.api_keys
 
