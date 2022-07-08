@@ -14,7 +14,7 @@ def index():
     return render_template('index.html')
 
 @main.route('/purchase')
-def index():
+def purchase():
     return render_template('purchase.html')
 
 @main.route('/gen_api<id>')
