@@ -5,7 +5,6 @@ import os
 from .main.routes import main
 from .extensions import mongo
 
-
 load_dotenv()
 MONGO_URI = os.getenv('MONGO_URI')
 
