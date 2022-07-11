@@ -11,9 +11,10 @@ def generator(id):
     db = mongodb_client["translatordb"]
     col = db["api_keys"]
     key = secrets.token_hex(16)
-    server_key = {"server_id" : int(id)}
+    server_id = int(id)
+    server_key = {"server_id" : server_id}
     specs = {
-            "server_id" : id,
+            "server_id" : server_id,
             "key": key,
         }
     result = col.update_one(server_key ,{"$set":specs}, True)
