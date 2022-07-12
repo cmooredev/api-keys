@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 import os
 import pymongo
 import secrets
-import datetime import datetime
+from datetime import datetime
 
 load_dotenv()
 MONGO_URI = os.getenv('MONGO_URI')
