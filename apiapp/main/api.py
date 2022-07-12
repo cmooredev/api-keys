@@ -7,7 +7,7 @@ from datetime import datetime
 load_dotenv()
 MONGO_URI = os.getenv('MONGO_URI')
 
-def generator(id):
+def generator(id, credits=200000):
     mongodb_client = pymongo.MongoClient(MONGO_URI)
     db = mongodb_client["translatordb"]
     col = db["api_keys"]
@@ -18,6 +18,7 @@ def generator(id):
             "server_id" : server_id,
             "key": key,
             "registration_date": datetime.now(),
+            "credits": credits,
         }
     result = col.update_one(server_key ,{"$set":specs}, True)
     return key
