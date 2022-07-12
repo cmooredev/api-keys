@@ -17,7 +17,7 @@ def generator(id):
     specs = {
             "server_id" : server_id,
             "key": key,
-            "registration_date": datetime.today().replace(microsecond=0),
+            "registration_date": datetime.now(),
         }
     result = col.update_one(server_key ,{"$set":specs}, True)
     return key
