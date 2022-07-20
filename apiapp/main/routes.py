@@ -24,9 +24,9 @@ def purchase():
     else:
         return render_template('purchase.html')
 
-@main.route('/success', methods=["POST", "GET"])
+@main.route('/<text>', methods=["POST", "GET"])
 def success(text):
-    return render_template('success.html')
+    return render_template('success.html', text=text)
 
 @main.route('/support')
 def support():
