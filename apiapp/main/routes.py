@@ -25,8 +25,8 @@ def purchase():
         return render_template('purchase.html')
 
 @main.route('/success', methods=["POST", "GET"])
-def success():
-    return render_template('success.html')
+def success(text):
+    return render_template('success.html', text=text)
 
 @main.route('/support')
 def support():
