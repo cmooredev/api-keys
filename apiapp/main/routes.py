@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, redirect, url_for, render_template, request
 
 from .api import generator
 
@@ -18,13 +18,21 @@ def pricing():
 
 @main.route('/purchase', methods=["POST", "GET"])
 def purchase():
-    return render_template('purchase.html')
+    if request.method =='POST':
+        server_id = request.form['server_id']
+        return redirect(url_for("success", text=server_id))
+    else:
+        return render_template('purchase.html')
+
+@main.route('/success')
+def success():
+    return render_template('success.html')
 
 @main.route('/support')
-def suppor():
+def support():
     return render_template('support.html')
 
 @main.route('/gen_api<id>')
 def gen_api(id):
     api = generator(id)
-    return render_template('success.html', text=api)
+    return return redirect(url_for("success", text=api))
