@@ -24,7 +24,7 @@ def purchase():
     else:
         return render_template('purchase.html')
 
-@main.route('/success')
+@main.route('/success', methods=["POST", "GET"])
 def success():
     return render_template('success.html')
 
