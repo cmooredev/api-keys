@@ -20,6 +20,10 @@ def pricing():
 def purchase():
     return render_template('purchase.html')
 
+@main.route('/support')
+def suppor():
+    return render_template('support.html')
+
 @main.route('/gen_api<id>')
 def gen_api(id):
     api = generator(id)
