@@ -5,23 +5,20 @@
 {% block body %}
 
 <form class="" action="index.html" method="post">
-  <p>
+  <div class="form-group">
     <label for="server_id">server id:</label>
-  </p>
-  <p>
+
     <input type="text" name="server_id"/>
-  </p>
-  <p>
+  </div>
+  <div class="form-group">
     <label for="plan">Choose a car:</label>
-  </p>
-  <p>
-    <select id="plan" name="plan">
+    <select class="form-control" id="plan" name="plan">
       <option value="intro">intro</option>
       <option value="basic">basic</option>
       <option value="pro">pro</option>
     </select>
-  </p>
-  <p><input type="submit" value="submit"/></p>
+    <input type="submit" value="submit"/>
+  </div>
 </form>
 
 {% endblock %}
