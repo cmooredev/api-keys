@@ -41,6 +41,17 @@
   <!-- MAIN CONTENT BEGIN HERE -->
   {% block body %}{% endblock %}
   <!-- MAIN CONTENT ENDS HERE -->
+  <footer class={`border-top box-shadow footer ${show}`}>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-auto mt-3" align="center">
+            <h5>Resources</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="/support">Contact</a></li>
+                <li><a class="text-muted" href="/support">Apply</a></li>
+            </ul>
+            </div>
+        </div>
+  </footer>
 
   <!-- Jquery -->
   <script src="{{ url_for('static',filename='assets/js/vendor/jquery-3.3.1.min.js') }}"></script>
