@@ -16,7 +16,7 @@ def about():
 def pricing():
     return render_template('pricing.html')
 
-@main.route('/purchase')
+@main.route('/purchase', methods=["POST", "GET"])
 def purchase():
     return render_template('purchase.html')
 
@@ -27,4 +27,4 @@ def suppor():
 @main.route('/gen_api<id>')
 def gen_api(id):
     api = generator(id)
-    return render_template('purchase.html', text=api)
+    return render_template('success.html', text=api)

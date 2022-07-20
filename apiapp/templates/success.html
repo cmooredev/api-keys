@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Purchase{% endblock %}
+
+
+{% block body %}
+
+<h1>
+  Thank you for your purchase.
+</h1>
+
+<div>
+  {% if text %}
+  <h2>Your api key: {{ text }}</h2>
+  {% else %}
+  <h2>No key generated.</h2>
+  {% endif %}
+</div>
+
+
+{% endblock %}
