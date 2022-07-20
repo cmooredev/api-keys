@@ -20,7 +20,7 @@ def pricing():
 def purchase():
     if request.method =='POST':
         server_id = request.form['server_id']
-        return redirect(url_for("../templates/success", text=server_id))
+        return redirect(url_for("success", text=server_id))
     else:
         return render_template('purchase.html')
 
