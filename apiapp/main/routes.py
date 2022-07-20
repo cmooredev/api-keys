@@ -9,11 +9,11 @@ def index():
     return render_template('index.html')
 
 @main.route('/about')
-def index():
+def about():
     return render_template('about.html')
 
 @main.route('/pricing')
-def index():
+def pricing():
     return render_template('pricing.html')
 
 @main.route('/purchase')
