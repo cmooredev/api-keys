@@ -3,76 +3,75 @@
 {% block head %}{% endblock %}
 
 {% block body %}
-<div class="container">
+<div className="container">
+   <div className="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+       <h1 className="display-4">Translatoooor Pricing</h1>
+       <p className="lead">Powerful and fast translation services for your Discord server.</p>
+       <p>Multiple languages. Configurable settings.</p>
+   </div>
+</div>
 
-  <div class="koolui-pribel-plas17">
-    <div class="row">
+<div className="container mb-5">
+    <PricingHeader />
+        <div className="row text-center">
 
-      <div class="col-lg-3 col-md-6 mx-auto">
-        <div class="item item--01">
-          <div class="item__heading">
-            <h3 class="text-uppercase">Intro</h3>
-          </div><!-- /.item-heading -->
-          <div class="item__media">
-            <img src="{{ url_for('static',filename='assets/img/rocket.png') }}" alt="Image">
-          </div><!-- /.item-media -->
-          <div class="item__content">
-            <ul>
-              <li>50,000 characters</li>
-              <li>Multi-Language Support</li>
-            </ul>
-            <div class="item__pricing">
-              <p>$5<span>/mo</span></p>
-            </div><!--  /.pricing-->
-            <button class="btn btn-primary btn-block">Purchase</button>
-          </div><!-- /.item-content -->
-        </div><!-- /table-item -->
-      </div><!-- /.col -->
+          <div className="col-md-4">
 
-      <div class="col-lg-3 col-md-6 mx-auto">
-        <div class="item item--02">
-          <div class="item__heading">
-            <h3 class="text-uppercase">Basic</h3>
-          </div><!-- /.item-heading -->
-          <div class="item__media">
-            <img src="{{ url_for('static',filename='assets/img/leaf.png') }}" alt="Image">
-          </div><!-- /.item-media -->
-          <div class="item__content">
-            <ul>
-              <li>250,000 characters</li>
-              <li>Multi-Language Support</li>
-            </ul>
-            <div class="item__pricing">
-              <p>$20<span>/mo</span></p>
-            </div><!--  /.pricing-->
-            <button name="buy_intro" type="button" onclick="buy_apikey()" class="btn btn-primary btn-block">Purchase</button>
-          </div><!-- /.item-content -->
-        </div><!-- /table-item -->
-      </div><!-- /.col -->
 
-      <div class="col-lg-3 col-md-6 mx-auto">
-        <div class="item item--03">
-          <div class="item__heading">
-            <h3 class="text-uppercase">Pro</h3>
-          </div><!-- /.item-heading -->
-          <div class="item__media">
-            <img src="{{ url_for('static',filename='assets/img/chat.png') }}" alt="Image">
-          </div><!-- /.item-media -->
-          <div class="item__content">
-            <ul>
-              <li>500,000 characters</li>
-              <li>Multi-Language Support</li>
-            </ul>
-            <div class="item__pricing">
-              <p>$35<span>/mo</span></p>
-            </div><!--  /.pricing-->
-            <button class="btn btn-primary btn-block">Purchase</button>
-          </div><!-- /.item-content -->
-        </div><!-- /table-item -->
-      </div><!-- /.col -->
+                <div className="col-sm-12 box-shadow card my-2">
+                    <div className="card-header">
+                        <h4 className="my-0 font-weight-normal">Starter</h4>
+                    </div>
+                    <div className="card-body">
+                        <h1 className="card-title pricing-card-title">$10 <small className="text-muted">/ mo</small></h1>
+                        <ul className="list-unstyled mt-3 mb-4">
+                        <li>-Single Server</li>
+                        <li>-75,000 characters/month</li>
+                        <li>-Email support</li>
+                        </ul>
+                        <button onClick={() => buyCredits(75000)} type="button" className="btn btn-lg btn-block btn-primary">Get started</button>
+                    </div>
+                </div>
+          </div>
+          <div className="col-md-4">
 
-    </div><!-- /.row -->
-  </div><!-- /.koolui-pribel-plas17 -->
 
-</div><!-- /.container -->
+                <div className="col-sm-12 box-shadow card my-2">
+                    <div className="card-header">
+                        <h4 className="my-0 font-weight-normal">Basic</h4>
+                    </div>
+                    <div className="card-body">
+                        <h1 className="card-title pricing-card-title">$18 <small className="text-muted">/ mo</small></h1>
+                        <ul className="list-unstyled mt-3 mb-4">
+                        <li>-Sinlge Server</li>
+                        <li>-200,000 characters/month</li>
+                        <li>-Email support</li>
+                        </ul>
+                        <button onClick={() => buyCredits(200000)} type="button" className="btn btn-lg btn-block btn-primary">Get started</button>
+                    </div>
+                </div>
+            </div>
+
+            <div className="col-md-4">
+
+                <div className="col-sm-12 box-shadow card my-2">
+                    <div className="card-header">
+                        <h4 className="my-0 font-weight-normal">Pro</h4>
+                    </div>
+                    <div className="card-body">
+                        <h1 className="card-title pricing-card-title">$29 <small className="text-muted">/ mo</small></h1>
+                        <ul className="list-unstyled mt-3 mb-4">
+                        <li>-Multiple Servers</li>
+                        <li>-450,000 characters/month</li>
+                        <li>-Email support</li>
+                        </ul>
+                        <button onClick={() => buyCredits(450000)} type="button" className="btn btn-lg btn-block btn-primary">Get started</button>
+                    </div>
+                </div>
+              </div>
+
+        </div>
+</div>
+
+
 {% endblock %}
