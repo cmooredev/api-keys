@@ -1,3 +1,4 @@
 apiapp/main/__pycache__/
 .env
 .DS_Store
+__pychache__
