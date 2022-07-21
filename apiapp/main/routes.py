@@ -76,6 +76,10 @@ def support():
 def cancel():
     return render_template('cancel.html')
 
+@main.route('/server_form')
+def cancel():
+    return render_template('server_form.html')
+
 @main.route('/stripe_webhook', methods=['POST'])
 def stripe_webhook():
     print('webhook called')
