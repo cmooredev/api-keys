@@ -12,26 +12,20 @@ main = Blueprint('main', __name__)
 
 #----
 
-def calculate_order_amount(items):
-    return 1400
-
 @main.route('/create-checkout-session', methods=['POST'])
 def create_checkout_session():
-    session = stripe.checkout.Session.create(
-        line_items[{
-            'price_data': {
-                'currency': 'usd',
-                'product_data': {
-                    'name': 'translatoooor',
-                },
-                'uint_amount': 1,
-            },
-            'quantity': 1,
-        }],
-        mode='payment',
-        success_url='https://hellabots.com/success',
-        _url='https://hellabots.com/cancel',
-    )
+    try:
+        session = stripe.checkout.Session.create(
+            line_items[{
+                'price': 'pr_222',
+                'quantity': 1,
+            }],
+            mode='payment',
+            success_url='https://hellabots.com/success',
+            cancel_url='https://hellabots.com/cancel',
+        )
+    except Exception as e:
+        return str(e)
     return redirect(session.url, code=303)
 #----
 
