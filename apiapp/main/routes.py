@@ -17,6 +17,24 @@ def calculate_order_amount(items):
 
 #----
 
+@app.route('/create-payment-intent', methods=['POST'])
+def create_payment():
+    try:
+        data = json.loads(request.data)
+        # Create a PaymentIntent with the order amount and currency
+        intent = stripe.PaymentIntent.create(
+            amount=calculate_order_amount(data['items']),
+            currency='eur',
+            automatic_payment_methods={
+                'enabled': True,
+            },
+        )
+        return jsonify({
+            'clientSecret': intent['client_secret']
+        })
+    except Exception as e:
+        return jsonify(error=str(e)),
+
 @main.route('/')
 def index():
     return render_template('index.html')
@@ -34,18 +52,6 @@ def purchase():
     if request.method =='POST':
         server_id = request.form['server_id']
         plan = request.form['plan']
-        try:
-            data = json.loads(request.data)
-            intent = stripe.PaymentIntent.create(
-                amount=calculate_order_amount(data['items']),
-                currency='usd'
-            )
-
-            return jsonify({
-              'clientSecret': intent['client_secret']
-            })
-        except Exception as e:
-            return jsonify(error=str(e)), 403
         return redirect(url_for("main.success", id=server_id, plan=plan))
     else:
         return render_template('purchase.html')
