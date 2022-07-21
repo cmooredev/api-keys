@@ -77,7 +77,7 @@ def cancel():
     return render_template('cancel.html')
 
 @main.route('/server_form')
-def cancel():
+def server_form():
     return render_template('server_form.html')
 
 @main.route('/stripe_webhook', methods=['POST'])
