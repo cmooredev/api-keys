@@ -28,7 +28,7 @@ def purchase():
 @main.route('/<id>#<plan>')
 def success(id, plan):
     api = generator(id)
-    return render_template('success.html', api=id, plan=plan)
+    return render_template('success.html', id=api, plan=plan)
 
 @main.route('/support')
 def support():
