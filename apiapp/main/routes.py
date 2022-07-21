@@ -9,13 +9,9 @@ stripe.api_key = os.getenv('STRIPE_API_KEY')
 
 main = Blueprint('main', __name__)
 
-#----
-
 def calculate_order_amount(items):
     return 1400
 
-
-#----
 
 @main.route('/create-payment-intent', methods=['POST'])
 def create_payment():
@@ -33,7 +29,7 @@ def create_payment():
             'clientSecret': intent['client_secret']
         })
     except Exception as e:
-        return jsonify(error=str(e)),
+        return jsonify(error=str(e)), 403
 
 @main.route('/')
 def index():

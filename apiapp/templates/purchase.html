@@ -1,39 +1,19 @@
 {% extends 'base.html' %}
 {% block head %}
 <head>
-    <meta charset="utf-8" />
-    <title>Accept a payment</title>
-    <meta name="description" content="A demo of a payment on Stripe" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/checkout.css') }}" />
-    <script src="https://js.stripe.com/v3/"></script>
-    <script src="{{ url_for('static',filename='assets/js/checkout.js') }}" defer></script>
-  </head>
+  <meta charset="utf-8" />
+  <title>Accept a payment</title>
+  <meta name="description" content="A demo of a payment on Stripe" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="checkout.css" />
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="checkout.js" defer></script>
+</head>
+
 {% endblock %}
 
 {% block title %}Purchase{% endblock %}
-
-{% block body %}
-<div class="container form-container">
-  <form action="#" method="post">
-    <div class="mb-3 form-check">
-      <label for="server_id" class="form-label">Server ID</label>
-      <input name="server_id" type="number" class="form-control" required="true">
-    </div>
-    <div class="mb-3 form-check">
-      <label for="plan">Tier</label>
-      <select class="form-control text-center" id="plan" name="plan">
-        <option value="Intro">Intro 75,000 characters/month - $10</option>
-        <option value="Basic">Basic 200,000 characters/month - $18</option>
-        <option value="Pro">Pro 450,000 characters/month - $29</option>
-      </select>
-    </div>
-    <div class="mb-3 form-check">
-    <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
-  </form>
-
-  <body>
+<body>
     <!-- Display a payment form -->
     <form id="payment-form">
       <div id="payment-element">
@@ -46,5 +26,7 @@
       <div id="payment-message" class="hidden"></div>
     </form>
   </body>
-</div>
+
+{% block body %}
+
 {% endblock %}
