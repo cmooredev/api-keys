@@ -30,10 +30,12 @@ def create_checkout_session():
         }],
         mode='payment',
         success_url='https://hellabots.com/success',
-        cancel_url='https://hellabots.com/cancel',
+        _url='https://hellabots.com/cancel',
     )
     return redirect(session.url, code=303)
 #----
+
+
 
 @main.route('/')
 def index():
@@ -64,3 +66,11 @@ def success(id, plan):
 @main.route('/support')
 def support():
     return render_template('support.html')
+
+@main.route('/success')
+def success():
+    return render_template('success.html')
+
+@main.route('/cancel')
+def cancel():
+    return render_template('cancel.html')
