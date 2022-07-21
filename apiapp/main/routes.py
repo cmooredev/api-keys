@@ -17,7 +17,7 @@ def calculate_order_amount(items):
 
 #----
 
-@app.route('/create-payment-intent', methods=['POST'])
+@main.route('/create-payment-intent', methods=['POST'])
 def create_payment():
     try:
         data = json.loads(request.data)
