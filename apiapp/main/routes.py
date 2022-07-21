@@ -36,4 +36,4 @@ def support():
 @main.route('/gen_api<id>')
 def gen_api(id):
     api = generator(id)
-    return redirect(url_for("success", id=api))
+    return redirect(url_for("success", id=api, plan=10))
