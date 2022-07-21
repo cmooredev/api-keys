@@ -27,18 +27,13 @@ def create_checkout_session(plan):
             'quantity': 2,
         }
     elif str(plan) == 'basic':
-        item = {
+        item =[ {
             'price': 'price_1LO3ZMBMA2F3juHIWj8p2PXM',
             'quantity': 3,
-        }
+        }]
     try:
         checkout_session = stripe.checkout.Session.create(
-            line_items=[
-                {
-                    # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-                    item
-                },
-            ],
+            line_items=item,
             mode='payment',
             success_url='https://hellabots.com/success',
             cancel_url='https://hellabots.com/cancel',
