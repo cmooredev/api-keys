@@ -15,19 +15,19 @@ main = Blueprint('main', __name__)
 
 @main.route('/create-checkout-session/<plan>', methods=['POST'])
 def create_checkout_session(plan):
-
+    item = []
     if str(plan) == 'intro':
-        item = {
+        item = [{
             'price': 'price_1LO3ZMBMA2F3juHIWj8p2PXM',
             'quantity': 1,
-        }
+        }]
     elif str(plan) == 'basic':
-        item = {
+        item = [{
             'price': 'price_1LO3ZMBMA2F3juHIWj8p2PXM',
             'quantity': 2,
-        }
+        }]
     elif str(plan) == 'basic':
-        item =[ {
+        item =[{
             'price': 'price_1LO3ZMBMA2F3juHIWj8p2PXM',
             'quantity': 3,
         }]
