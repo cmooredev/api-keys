@@ -76,7 +76,7 @@ def support():
 def cancel():
     return render_template('cancel.html')
 
-@main.route('/server_form')
+@main.route('/server_form', methods=['POST'])
 def server_form():
     return render_template('server_form.html')
 
