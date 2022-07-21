@@ -3,7 +3,6 @@ from dotenv import load_dotenv
 import os
 import stripe
 from .api import generator
-from .payments import make_payment
 
 load_dotenv()
 stripe.api_key = os.getenv('STRIPE_API_KEY')
