@@ -104,7 +104,3 @@ def stripe_webhook():
         ##line_items = stripe.checkout.Session.list_line_items(session="id")
         #print(line_items)
     return{}
-
-@main.route('/modal')
-def modal():
-    return render_template('modal.html')
