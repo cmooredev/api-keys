@@ -57,10 +57,10 @@ def about():
 def pricing():
     return render_template('pricing.html')
 
-@main.route('/<id>#<plan>')
-def success(id, plan):
-    api = generator(id, plan)
-    return render_template('success.html', id=api, plan=plan)
+@main.route('/success')
+def success():
+    #api = generator(id, plan)
+    return render_template('success.html', id=0, plan=1)
 
 @main.route('/support')
 def support():
