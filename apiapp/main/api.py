@@ -9,11 +9,11 @@ MONGO_URI = os.getenv('MONGO_URI')
 
 def generator(id, plan):
     credits = 0
-    if plan == 'intro':
+    if plan == 'Intro':
         credits=75000
-    elif plan == 'basic':
+    elif plan == 'Basic':
         credits=200000
-    elif plan == 'pro':
+    elif plan == 'Pro':
         credits == 450000
     mongodb_client = pymongo.MongoClient(MONGO_URI)
     db = mongodb_client["translatordb"]
