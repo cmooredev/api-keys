@@ -23,13 +23,13 @@ def create_checkout_session(plan):
         }]
     elif str(plan) == 'basic':
         item = [{
-            'price': 'price_1LO3ZMBMA2F3juHIWj8p2PXM',
+            'price': 'price_1LO3uVBMA2F3juHIeLTSXoAq',
             'quantity': 2,
         }]
-    elif str(plan) == 'basic':
+    elif str(plan) == 'pro':
         item =[{
-            'price': 'price_1LO3ZMBMA2F3juHIWj8p2PXM',
-            'quantity': 3,
+            'price': 'price_1LO3vOBMA2F3juHI8WUwLgEm',
+            'quantity': 1,
         }]
     try:
         checkout_session = stripe.checkout.Session.create(
