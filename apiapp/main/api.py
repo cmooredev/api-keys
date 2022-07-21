@@ -11,11 +11,11 @@ def generator(id, plan):
     credits = 0
     print(plan)
     if str(plan) == 'Intro':
-        credits=75000
+        credits = 75000
     elif str(plan) == 'Basic':
-        credits=200000
+        credits = 200000
     elif str(plan) == 'Pro':
-        credits == 450000
+        credits = 450000
     mongodb_client = pymongo.MongoClient(MONGO_URI)
     db = mongodb_client["translatordb"]
     col = db["api_keys"]
