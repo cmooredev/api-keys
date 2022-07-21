@@ -7,7 +7,14 @@ from datetime import datetime
 load_dotenv()
 MONGO_URI = os.getenv('MONGO_URI')
 
-def generator(id, credits=200000):
+def generator(id, plan):
+    credits = 0
+    if plan == 'intro':
+        credits=75000
+    elif plan == 'basic':
+        credits=200000
+    elif plan == 'pro':
+        credits == 450000
     mongodb_client = pymongo.MongoClient(MONGO_URI)
     db = mongodb_client["translatordb"]
     col = db["api_keys"]
