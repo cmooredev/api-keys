@@ -1,4 +1,4 @@
-from flask import Blueprint, redirect, url_for, render_template, request
+from flask import Blueprint, redirect, url_for, render_template, request, abort
 from dotenv import load_dotenv
 import os
 import stripe
@@ -7,6 +7,8 @@ from .api import generator
 
 load_dotenv()
 stripe.api_key = os.getenv('STRIPE_API_KEY')
+STRIPE_PUBLIC = os.getenv('STRIPE_PUBLIC')
+ENDPOINT_SECRET = os.getenv('ENDPOINT_SECRET')
 
 main = Blueprint('main', __name__)
 
@@ -35,14 +37,16 @@ def create_checkout_session(plan):
         checkout_session = stripe.checkout.Session.create(
             line_items=item,
             mode='payment',
-            success_url='https://hellabots.com/success',
-            cancel_url='https://hellabots.com/pricing',
+            success_url=url_for('success', _external=True) + '?session_id={CHECKOUT_SESSION_ID}',
+            cancel_url=url_for('pricing', _external=True),
             automatic_tax={'enabled': True},
         )
     except Exception as e:
         return str(e)
 
-    return redirect(checkout_session.url, code=303)
+    return render_template('success.html',
+        checkout_session_id=checkout_session['id'],
+        checkout_public_key=STRIPE_PUBLIC)
 #----
 
 @main.route('/')
@@ -69,3 +73,30 @@ def support():
 @main.route('/cancel')
 def cancel():
     return render_template('cancel.html')
+
+@main.route('/stripe_webhook', methods=['POST'])
+def stripe_webhook():
+    print('webhook called')
+
+    if request.content_length > 1024 * 1024:
+        print('request too big')
+        abort(400)
+    payload = request.get_data()
+    sig_header = request.environ.get('HTTP_STRIPE_SIGNATURE')
+    endpoint_secret = ENDPOINT_SECRET
+    event = None
+
+    try:
+        event = stripe.Webhook.construct_event(
+        payload, sig_header, endpoint_secret
+        )
+    except ValueError as e:
+        return {}, 400
+    except stripe.error.SignatureVerificationError as e:
+        return {}, 400
+
+    if event['type'] == 'checkout.session.completed':
+        session = event['data']['object']
+
+
+    return{}
