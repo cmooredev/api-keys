@@ -20,13 +20,14 @@ def pricing():
 def purchase():
     if request.method =='POST':
         server_id = request.form['server_id']
-        return redirect(url_for("main.success", id=server_id))
+        plan = request.form['plan']
+        return redirect(url_for("main.success", id=server_id, plan=plan))
     else:
         return render_template('purchase.html')
 
 @main.route('/<id>')
-def success(id):
-    return render_template('success.html', id=id)
+def success(id, plan):
+    return render_template('success.html', id=id, plan=plan)
 
 @main.route('/support')
 def support():
