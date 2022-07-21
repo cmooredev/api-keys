@@ -14,9 +14,6 @@ main = Blueprint('main', __name__)
 def calculate_order_amount(items):
     return 1400
 
-@main.route('/create-payment-intent', methods=['POST'])
-def create_payment():
-
 
 #----
 
