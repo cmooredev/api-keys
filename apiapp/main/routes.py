@@ -36,7 +36,7 @@ def create_checkout_session(plan):
             line_items=item,
             mode='payment',
             success_url='https://hellabots.com/success',
-            cancel_url='https://hellabots.com/cancel',
+            cancel_url='https://hellabots.com/pricing',
             automatic_tax={'enabled': True},
         )
     except Exception as e:
