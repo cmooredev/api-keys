@@ -15,21 +15,24 @@ main = Blueprint('main', __name__)
 def calculate_order_amount(items):
     return 1400
 
-@main.route('/create-payment-intent', methods=['POST'])
-def create_payment():
-    try:
-        data = json.loads(request.data)
-        intent = stripe.PaymentIntent.create(
-            amount=calculate_order_amount(data['items']),
-            currency='usd'
-        )
-
-        return jsonify({
-          'clientSecret': intent['client_secret']
-        })
-    except Exception as e:
-        return jsonify(error=str(e)), 403
-
+@main.route('/create-checkout-session', methods=['POST'])
+def create_checkout_session():
+    session = stripe.checkout.Session.create(
+        line_items[{
+            'price_data': {
+                'currency': 'usd',
+                'product_data': {
+                    'name': 'translatoooor',
+                },
+                'uint_amount': 1,
+            },
+            'quantity': 1,
+        }],
+        mode='payment',
+        success_url='https://hellabots.com/success',
+        cancel_url='https://hellabots.com/cancel',
+    )
+    return redirect(session.url, code=303)
 #----
 
 @main.route('/')
