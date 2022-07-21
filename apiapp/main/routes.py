@@ -18,8 +18,7 @@ main = Blueprint('main', __name__)
 @main.route('/create-checkout-session', methods=['POST'])
 def create_checkout_session():
     plan = request.form.get('plan')
-    print(plan)
-    server_id = 100
+    server_id = request.form.get('server_id')
     item = []
     if str(plan) == 'intro':
         item = [{
@@ -29,7 +28,7 @@ def create_checkout_session():
     elif str(plan) == 'basic':
         item = [{
             'price': 'price_1LO3uVBMA2F3juHIeLTSXoAq',
-            'quantity': 2,
+            'quantity': 1,
         }]
     elif str(plan) == 'pro':
         item =[{
@@ -106,7 +105,8 @@ def stripe_webhook():
 
     if event['type'] == 'checkout.session.completed':
         session = event['data']['object']
-        print(session)
+        print(session['server_id'])
+        print(session['plan'])
         ##line_items = stripe.checkout.Session.list_line_items(session="id")
         #print(line_items)
     return{}
