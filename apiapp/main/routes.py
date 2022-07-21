@@ -44,9 +44,7 @@ def create_checkout_session(plan):
     except Exception as e:
         return str(e)
 
-    return render_template('success.html',
-        checkout_session_id=checkout_session['id'],
-        checkout_public_key=STRIPE_PUBLIC)
+    return redirect(checkout_session.url, code=303)
 #----
 
 @main.route('/')
