@@ -89,12 +89,17 @@ def stripe_webhook():
         payload, sig_header, endpoint_secret
         )
     except ValueError as e:
+        print('invalid payload')
         return {}, 400
     except stripe.error.SignatureVerificationError as e:
+        print('invalid signature')
         return {}, 400
 
     if event['type'] == 'checkout.session.completed':
         session = event['data']['object']
+        print(session)
+        ##line_items = stripe.checkout.Session.list_line_items(session="id")
+        #print(line_items)
 
 
     return{}
