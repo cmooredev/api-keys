@@ -2,6 +2,7 @@ from flask import Blueprint, redirect, url_for, render_template, request, abort
 from dotenv import load_dotenv
 import os
 import stripe
+import json
 from .api import generator
 
 
@@ -105,6 +106,8 @@ def stripe_webhook():
 
     if event['type'] == 'checkout.session.completed':
         session = event['data']['object']
+        session_data = json.loads(session)
+        print(session)
         print(session['server_id'])
         print(session['plan'])
         ##line_items = stripe.checkout.Session.list_line_items(session="id")
