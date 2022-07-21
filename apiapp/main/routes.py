@@ -25,7 +25,7 @@ def purchase():
     else:
         return render_template('purchase.html')
 
-@main.route('/<id>')
+@main.route('/<id>#<plan>')
 def success(id, plan):
     return render_template('success.html', id=id, plan=plan)
 
