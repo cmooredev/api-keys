@@ -43,6 +43,6 @@ footer{position: fixed; bottom: 0; left: 0; right: 0; background-color: white;}
     position: relative;
   }
   .form-container {
-    width: 50%;
+    width: 95%;
   }
 }
