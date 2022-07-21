@@ -66,7 +66,6 @@ def pricing():
 
 @main.route('/success')
 def success():
-    #api = generator(id, plan)
     return render_template('success.html', id=0, plan=1)
 
 @main.route('/support')
@@ -109,7 +108,8 @@ def stripe_webhook():
         plan = session['metadata']['plan']
         print(server_id)
         print(plan)
-
+        api = generator(server_id, plan)
+        print(f'new api key: {api}')
         ##line_items = stripe.checkout.Session.list_line_items(session="id")
         #print(line_items)
     return{}
