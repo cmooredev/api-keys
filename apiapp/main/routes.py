@@ -13,15 +13,30 @@ main = Blueprint('main', __name__)
 #----
 
 
-@main.route('/create-checkout-session', methods=['POST'])
-def create_checkout_session():
+@main.route('/create-checkout-session/<plan>', methods=['POST'])
+def create_checkout_session(plan):
+
+    if str(plan) == 'intro':
+        item = {
+            'price': 'price_1LO3ZMBMA2F3juHIWj8p2PXM',
+            'quantity': 1,
+        }
+    elif str(plan) == 'basic':
+        item = {
+            'price': 'price_1LO3ZMBMA2F3juHIWj8p2PXM',
+            'quantity': 2,
+        }
+    elif str(plan) == 'basic':
+        item = {
+            'price': 'price_1LO3ZMBMA2F3juHIWj8p2PXM',
+            'quantity': 3,
+        }
     try:
         checkout_session = stripe.checkout.Session.create(
             line_items=[
                 {
                     # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-                    'price': 'price_1LO3ZMBMA2F3juHIWj8p2PXM',
-                    'quantity': 1,
+                    item
                 },
             ],
             mode='payment',
