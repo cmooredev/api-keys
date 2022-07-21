@@ -1,11 +1,14 @@
 from dotenv import load_dotenv
 import os
+import stripe
 import pymongo
 import secrets
+import json
 from datetime import datetime
 
 load_dotenv()
 MONGO_URI = os.getenv('MONGO_URI')
+stripe.api_key = os.getenv('STRIPE_API_KEY')
 
 def generator(id, plan):
     credits = 0
