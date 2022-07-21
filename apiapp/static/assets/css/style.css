@@ -27,11 +27,22 @@ footer{position: fixed; bottom: 0; left: 0; right: 0; background-color: white;}
 }
 
 .footer {
-  transition-timing-function: ease-in;
-  transition: 0.5s;
+  width: 100%;
+  margin: auto;
+  padding: 100px;
+  text-align: center;
+  -webkit-transition: padding 0.3s;
+    -moz-transition: padding 0.3s;
+    -ms-transition: padding 0.3s;
+    -o-transition: padding 0.3s;
+    transition: padding 0.3s;
 }
 .form-container {
   width: 50%;
+}
+
+.smaller {
+    padding: 10px;
 }
 
 
