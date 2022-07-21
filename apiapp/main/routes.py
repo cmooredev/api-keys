@@ -12,23 +12,27 @@ main = Blueprint('main', __name__)
 
 #----
 
+
 @main.route('/create-checkout-session', methods=['POST'])
 def create_checkout_session():
     try:
-        session = stripe.checkout.Session.create(
-            success_url='https://hellabots.com/success',
-            cancel_url='https://hellabots.com/cancel',
-            line_items[
+        checkout_session = stripe.checkout.Session.create(
+            line_items=[
                 {
-                'price': 'price_1LO2yiBMA2F3juHIqp4Ltd6e',
-                'quantity': 1,
+                    # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+                    'price': 'price_1LO2yiBMA2F3juHIqp4Ltd6e',
+                    'quantity': 1,
                 },
             ],
             mode='payment',
+            success_url='https://hellabots.com/success',
+            cancel_url='https://hellabots.com/cancel',
+            automatic_tax={'enabled': True},
         )
     except Exception as e:
         return str(e)
-    return redirect(session.url, code=303)
+
+    return redirect(checkout_session.url, code=303)
 #----
 
 
