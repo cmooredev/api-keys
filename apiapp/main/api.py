@@ -13,9 +13,9 @@ stripe.api_key = os.getenv('STRIPE_API_KEY')
 def generator(id, plan):
     credits = 0
     print(plan)
-    if str(plan) == 'Intro':
+    if str(plan) == 'intro':
         credits = 75000
-    elif str(plan) == 'Basic':
+    elif str(plan) == 'basic':
         credits = 200000
     elif str(plan) == 'Pro':
         credits = 450000
