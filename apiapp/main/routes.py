@@ -37,8 +37,8 @@ def create_checkout_session(plan):
         checkout_session = stripe.checkout.Session.create(
             line_items=item,
             mode='payment',
-            success_url=url_for('success', _external=True),
-            cancel_url=url_for('pricing', _external=True),
+            success_url=url_for('main.success', _external=True) + '?session_id={CHECKOUT_SESSION_ID}',
+            cancel_url=url_for('main.pricing', _external=True),
             automatic_tax={'enabled': True},
         )
     except Exception as e:
