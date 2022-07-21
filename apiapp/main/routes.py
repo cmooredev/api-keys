@@ -1,4 +1,4 @@
-from flask import Blueprint, redirect, url_for, render_template, request
+from flask import Blueprint, redirect, url_for, render_template, request, jsonify
 from dotenv import load_dotenv
 import os
 import stripe
