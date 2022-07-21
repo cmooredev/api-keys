@@ -17,6 +17,7 @@ main = Blueprint('main', __name__)
 
 @main.route('/create-checkout-session/<plan>', methods=['POST'])
 def create_checkout_session(plan):
+    server_id = 100
     item = []
     if str(plan) == 'intro':
         item = [{
@@ -35,7 +36,9 @@ def create_checkout_session(plan):
         }]
     try:
         checkout_session = stripe.checkout.Session.create(
-            metadata={"server_id": 999},
+            metadata={"server_id": server_id,
+                    "plan": plan,
+            },
             line_items=item,
             mode='payment',
             success_url=url_for('main.success', _external=True) + '?session_id={CHECKOUT_SESSION_ID}',
@@ -104,3 +107,7 @@ def stripe_webhook():
 
 
     return{}
+
+@main.route('/modal')
+def modal():
+    return render_template('modal.html')
