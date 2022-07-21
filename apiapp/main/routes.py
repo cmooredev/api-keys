@@ -16,14 +16,15 @@ main = Blueprint('main', __name__)
 def create_checkout_session():
     try:
         session = stripe.checkout.Session.create(
-            line_items[{
-                'id': 'prod_M6FTEj01luRSf7',
-                'price': 'price_1LO2yiBMA2F3juHIqp4Ltd6e',
-                'quantity': 1,
-            }],
-            mode='payment',
             success_url='https://hellabots.com/success',
             cancel_url='https://hellabots.com/cancel',
+            line_items[
+                {
+                'price': 'price_1LO2yiBMA2F3juHIqp4Ltd6e',
+                'quantity': 1,
+                }
+            ],
+            mode='payment',
         )
     except Exception as e:
         return str(e)
