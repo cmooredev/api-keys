@@ -27,13 +27,9 @@ def purchase():
 
 @main.route('/<id>#<plan>')
 def success(id, plan):
-    return render_template('success.html', id=id, plan=plan)
+    api = generator(id)
+    return render_template('success.html', api=id, plan=plan)
 
 @main.route('/support')
 def support():
     return render_template('support.html')
-
-@main.route('/gen_api<id>')
-def gen_api(id):
-    api = generator(id)
-    return redirect(url_for("success", id=api, plan=10))
