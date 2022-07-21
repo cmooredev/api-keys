@@ -1,35 +1,36 @@
-from flask import Blueprint, redirect, url_for, render_template, request, jsonify
+from flask import Blueprint, redirect, url_for, render_template, request
 from dotenv import load_dotenv
 import os
 import stripe
 from .api import generator
+
 
 load_dotenv()
 stripe.api_key = os.getenv('STRIPE_API_KEY')
 
 main = Blueprint('main', __name__)
 
+#----
+
 def calculate_order_amount(items):
     return 1400
-
 
 @main.route('/create-payment-intent', methods=['POST'])
 def create_payment():
     try:
         data = json.loads(request.data)
-        # Create a PaymentIntent with the order amount and currency
         intent = stripe.PaymentIntent.create(
             amount=calculate_order_amount(data['items']),
-            currency='eur',
-            automatic_payment_methods={
-                'enabled': True,
-            },
+            currency='usd'
         )
+
         return jsonify({
-            'clientSecret': intent['client_secret']
+          'clientSecret': intent['client_secret']
         })
     except Exception as e:
         return jsonify(error=str(e)), 403
+
+#----
 
 @main.route('/')
 def index():
