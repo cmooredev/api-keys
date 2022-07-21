@@ -79,7 +79,6 @@ def cancel():
 @main.route('/stripe_webhook', methods=['POST'])
 def stripe_webhook():
     print('webhook called')
-
     if request.content_length > 1024 * 1024:
         print('request too big')
         abort(400)
@@ -104,10 +103,8 @@ def stripe_webhook():
         print(session)
         ##line_items = stripe.checkout.Session.list_line_items(session="id")
         #print(line_items)
-
-
     return{}
 
 @main.route('/modal')
 def modal():
-    return render_template('modal.html')
+    render_template('modal.html')
