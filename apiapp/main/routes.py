@@ -20,7 +20,7 @@ def create_checkout_session():
             line_items=[
                 {
                     # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-                    'price': 'price_1LO2yiBMA2F3juHIqp4Ltd6e',
+                    'price': 'price_1LO3ZMBMA2F3juHIWj8p2PXM',
                     'quantity': 1,
                 },
             ],
@@ -35,8 +35,6 @@ def create_checkout_session():
     return redirect(checkout_session.url, code=303)
 #----
 
-
-
 @main.route('/')
 def index():
     return render_template('index.html')
@@ -48,15 +46,6 @@ def about():
 @main.route('/pricing')
 def pricing():
     return render_template('pricing.html')
-
-@main.route('/purchase', methods=["POST", "GET"])
-def purchase():
-    if request.method =='POST':
-        server_id = request.form['server_id']
-        plan = request.form['plan']
-        return redirect(url_for("main.success", id=server_id, plan=plan))
-    else:
-        return render_template('purchase.html')
 
 @main.route('/<id>#<plan>')
 def success(id, plan):
