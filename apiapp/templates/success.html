@@ -4,15 +4,23 @@
 
 
 {% block body %}
-<div class="col mx-auto">
-  <h1 class="container text-center">
-    Thank you for your purchase.
-  </h1>
+<div class="container">
+      <div class="about-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4 m-5">hellabots</h1>
+        <p class="lead">Thank you for your purchase.</p>
+        <div class='container'>
+          <div class="col mx-auto">
+            <p class="container text-center">
+              Join the discord for help. 
+            </p>
+        </div>
+      </div>
+</div>
+
 
   <div class="container text-center">
 
     <p>Confirmation Number: {{ id }}</p>
-    <p>Plan: {{ plan }} </p>
   </div>
 </div>
 
