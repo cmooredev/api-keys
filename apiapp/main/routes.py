@@ -15,7 +15,7 @@ main = Blueprint('main', __name__)
 def calculate_order_amount(items):
     return 1400
 
-@main.route('/create-checkout-session', methods=['POST'])
+@main.route('/create-checkout-session', methods=['POST', 'GET'])
 def create_checkout_session():
     session = stripe.checkout.Session.create(
         line_items[{
