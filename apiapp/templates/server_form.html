@@ -6,7 +6,7 @@
 {% block body %}
 
 <div class="container form-container">
-  <form action="/create-checkout-session/<plan>" method="post">
+  <form action="/create-checkout-session/{{plan}}" method="post">
     <div class="mb-3 form-check">
       <label for="server_id" class="form-label">Server ID</label>
       <input name="server_id" type="number" class="form-control" required="true">
