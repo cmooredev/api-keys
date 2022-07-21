@@ -4,18 +4,20 @@
 
 
 {% block body %}
+<<div class="col">
+  <h1 class="container">
+    Thank you for your purchase.
+  </h1>
 
-<h1>
-  Thank you for your purchase.
-</h1>
-
-<div>
-  {% if text %}
-  <h2>server id: {{ id }}</h2>
-  {% else %}
-  <h2>No key generated.</h2>
-  {% endif %}
+  <div class="container">
+    {% if id %}
+    <h2>server id: {{ id }}</h2>
+    {% else %}
+    <h2>No key generated.</h2>
+    {% endif %}
+  </div>
 </div>
+
 
 
 {% endblock %}
