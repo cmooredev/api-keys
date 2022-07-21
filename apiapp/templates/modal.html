@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
-{% block head %}{% endblock %}
+{% block head %}
+<script src="{{ url_for('static',filename='assets/js/modal.js') }}"></script>
+{% endblock %}
 
 {% block body %}
 
@@ -35,5 +37,5 @@
   </div>
 </div>
 
-<script src="{{ url_for('static',filename='assets/js/modal.js') }}"></script>
+
 {% endblock %}
