@@ -22,7 +22,7 @@ def create_checkout_session():
                 {
                 'price': 'price_1LO2yiBMA2F3juHIqp4Ltd6e',
                 'quantity': 1,
-                }
+                },
             ],
             mode='payment',
         )
