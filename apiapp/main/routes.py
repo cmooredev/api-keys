@@ -107,4 +107,4 @@ def stripe_webhook():
 
 @main.route('/modal')
 def modal():
-    render_template('modal.html')
+    return render_template('modal.html')
