@@ -30,6 +30,9 @@ footer{position: fixed; bottom: 0; left: 0; right: 0; background-color: white;}
   transition-timing-function: ease-in;
   transition: 0.5s;
 }
+.form-container {
+  width: 50%;
+}
 
 
 @media only screen and (max-width: 768px) {
