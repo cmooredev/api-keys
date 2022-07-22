@@ -82,7 +82,8 @@ def cancel():
 
 @main.route('/server_form', methods=['POST'])
 def server_form():
-    return render_template('server_form.html')
+    form = MyForm()
+    return render_template('server_form.html', form=form)
 
 @main.route('/stripe_webhook', methods=['POST'])
 def stripe_webhook():
