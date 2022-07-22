@@ -17,7 +17,7 @@
     <form action="/create-checkout-session" method="post">
       <div class="form-check mb-4 text-left">
         <label for="server_id" class="form-label">Server ID</label>
-        <input name="server_id" type="number" class="form-control" maxlength="18" minlength="17" required="true">
+        <input name="server_id" type="text" oninput="numberOnly(this.id);" class="form-control" required="true" maxlength="18" minlength="17">
       </div>
       <div class="form-check mb-4 text-left">
         <label for="plan">Tier</label>
