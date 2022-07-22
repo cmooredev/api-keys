@@ -50,6 +50,8 @@ img {max-width:500px;}
   html {
     font-size: 15px;
   }
+  img {max-width:200px;}
+
   .form-container .server_form {
     width: 95%;
   }
