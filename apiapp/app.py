@@ -5,10 +5,10 @@ from .main.routes import main
 
 def create_app():
     app = Flask(__name__)
-
     app.register_blueprint(main)
+    Talisman(app, content_security_policy=None)
     return app
 
-Talisman(app, content_security_policy=None)
+
 
 app = create_app()
