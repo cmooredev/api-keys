@@ -1,7 +1,6 @@
 from flask import Flask
 #import talisman to force https
 from flask_talisman import Talisman
-
 from .main.routes import main
 
 def create_app():

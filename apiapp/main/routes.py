@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import os
 import stripe
 from .api import generator
+from .forms import MyForm
 
 
 load_dotenv()
@@ -17,39 +18,42 @@ main = Blueprint('main', __name__)
 
 @main.route('/create-checkout-session', methods=['POST'])
 def create_checkout_session():
-    plan = request.form.get('plan')
-    server_id = request.form.get('server_id')
-    item = []
-    if str(plan) == 'intro':
-        item = [{
-            'price': 'price_1LOF3LBMA2F3juHITJVDewmJ',
-            'quantity': 1,
-        }]
-    elif str(plan) == 'basic':
-        item = [{
-            'price': 'price_1LOF4IBMA2F3juHIvOW1nEEX',
-            'quantity': 1,
-        }]
-    elif str(plan) == 'pro':
-        item =[{
-            'price': 'price_1LOF4gBMA2F3juHIwOUp0CKN',
-            'quantity': 1,
-        }]
-    try:
-        checkout_session = stripe.checkout.Session.create(
-            metadata={"server_id": server_id,
-                    "plan": plan,
-            },
-            line_items=item,
-            mode='payment',
-            success_url=url_for('main.success', _external=True) + '?session_id={CHECKOUT_SESSION_ID}',
-            cancel_url=url_for('main.pricing', _external=True),
-            automatic_tax={'enabled': True},
-        )
-    except Exception as e:
-        return str(e)
+    form = MyForm()
+    if form.validate_on_submit():
+        plan = request.form.get('plan')
+        server_id = request.form.get('server_id')
+        item = []
+        if str(plan) == 'intro':
+            item = [{
+                'price': 'price_1LOF3LBMA2F3juHITJVDewmJ',
+                'quantity': 1,
+            }]
+        elif str(plan) == 'basic':
+            item = [{
+                'price': 'price_1LOF4IBMA2F3juHIvOW1nEEX',
+                'quantity': 1,
+            }]
+        elif str(plan) == 'pro':
+            item =[{
+                'price': 'price_1LOF4gBMA2F3juHIwOUp0CKN',
+                'quantity': 1,
+            }]
+        try:
+            checkout_session = stripe.checkout.Session.create(
+                metadata={"server_id": server_id,
+                        "plan": plan,
+                },
+                line_items=item,
+                mode='payment',
+                success_url=url_for('main.success', _external=True) + '?session_id={CHECKOUT_SESSION_ID}',
+                cancel_url=url_for('main.pricing', _external=True),
+                automatic_tax={'enabled': True},
+            )
+        except Exception as e:
+            return str(e)
 
-    return redirect(checkout_session.url, code=303)
+        return redirect(checkout_session.url, code=303)
+    return render_template('server_form.html', form=form)
 #----
 
 @main.route('/')
