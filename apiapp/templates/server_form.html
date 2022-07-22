@@ -18,6 +18,16 @@
       <div class="form-check mb-4 text-left">
         {{ form.csrf_token }}
         {{ form.server_id.label }} {{ form.server_id(size=18, class="form-control") }}
+
+        {% if form.errors %}
+          <ul class="errors">
+            {% for field_name, field_errors in form.errors|dictsort if field_errors %}
+              {% for error in field_errors  %}
+                <li> {{ form[field_name].label }}: {{ error }} </li>
+              {% endfor %}
+            {% endfor %}
+          </ul>
+        {% endif %}
       </div>
       <div class="form-check mb-4 text-left">
         <label for="plan">Tier</label>
