@@ -20,8 +20,7 @@ main = Blueprint('main', __name__)
 @main.route('/create-checkout-session', methods=['POST'])
 def create_checkout_session():
     form = MyForm()
-    if form.validate_on_submit():
-    if form.validate_server():
+    if form.validate_on_submit() and form.validate_server():
         plan = request.form.get('plan')
         server_id = request.form.get('server_id')
         item = []
