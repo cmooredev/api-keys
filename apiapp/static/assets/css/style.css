@@ -30,8 +30,8 @@ img {max-width:400px;}
     background-image: url('/static/assets/img/postone.png');
     background-repeat: no-repeat;
     background-position: center;
-    height: 450px;
-    background-size: auto;
+    height: 400px;
+    background-size: contain;
 }
 
 
