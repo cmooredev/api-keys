@@ -2,10 +2,6 @@ html, body {padding:0; margin:0; height:100%; width: 100%;}
 footer{bottom: 0; left: 0; right: 0; background-color: white;}
 img {max-width:400px;}
 
-ul {
-  list-style-type: none;
-}
-
 .container {
   max-width: 960px;
 }
@@ -40,6 +36,10 @@ ul {
 
 .empty {
   height: 300px;
+}
+
+.error {
+  color: red;
 }
 
 .footer {
