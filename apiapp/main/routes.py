@@ -25,17 +25,17 @@ def create_checkout_session():
         item = []
         if str(plan) == 'intro':
             item = [{
-                'price': 'price_1LOF3LBMA2F3juHITJVDewmJ',
+                'price': 'price_1LO3ZMBMA2F3juHIWj8p2PXM',
                 'quantity': 1,
             }]
         elif str(plan) == 'basic':
             item = [{
-                'price': 'price_1LOF4IBMA2F3juHIvOW1nEEX',
+                'price': 'price_1LO3ZMBMA2F3juHIWj8p2PXM',
                 'quantity': 1,
             }]
         elif str(plan) == 'pro':
             item =[{
-                'price': 'price_1LOF4gBMA2F3juHIwOUp0CKN',
+                'price': 'price_1LO3ZMBMA2F3juHIWj8p2PXM',
                 'quantity': 1,
             }]
         try:
