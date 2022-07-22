@@ -3,9 +3,7 @@ from wtforms.fields import StringField
 from wtforms.validators import DataRequired
 
 class MyForm(FlaskForm):
-    server_id = StringField('Server ID', validators=[DataRequired(),
-                Regexp('^([\s\d]+)$', message='Numbers only')
-                ])
+    server_id = StringField('Server ID', [validators.Regexp('^([\s\d]+)$', message='Numbers only')])
 
     def validate_server(form, field):
         if len(field.data) < 18:
