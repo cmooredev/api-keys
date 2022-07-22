@@ -37,7 +37,11 @@ footer{bottom: 0; left: 0; right: 0; background-color: white;}
   text-align: center;
 }
 .main-content {
-  height: 80vh;
+  height: 75vh;
+}
+
+.server-form {
+  width: 100px;
 }
 
 
