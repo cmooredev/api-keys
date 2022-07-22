@@ -40,6 +40,10 @@ footer{bottom: 0; left: 0; right: 0; background-color: white;}
   width: 50%;
 }
 
+.server-form {
+  width: 50%;
+}
+
 
 
 
@@ -50,7 +54,7 @@ footer{bottom: 0; left: 0; right: 0; background-color: white;}
   footer {
     position: relative;
   }
-  .form-container {
+  .form-container .server_form {
     width: 95%;
   }
 }
