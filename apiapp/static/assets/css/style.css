@@ -14,7 +14,7 @@ footer{bottom: 0; left: 0; right: 0; background-color: white;}
 }
 
 .card-deck .card {
-  min-width: 280px;
+  min-width: 220px;
 }
 
 .border-top { border-top: 1px solid #e5e5e5; }
