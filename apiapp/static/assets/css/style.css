@@ -51,9 +51,9 @@ img {max-width:400px;}
     font-size: 15px;
   }
   .post-one{
-      background-image: ;
+      background-image: none;
       background-position: center;
-      background-size: contain;
+      background-size: cover;
   }
 
   .form-container .server_form {
