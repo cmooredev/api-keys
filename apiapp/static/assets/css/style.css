@@ -17,6 +17,10 @@ footer{bottom: 0; left: 0; right: 0; background-color: white;}
   min-width: 220px;
 }
 
+.card-header {
+  width: 100%;
+}
+
 .border-top { border-top: 1px solid #e5e5e5; }
 .border-bottom { border-bottom: 1px solid #e5e5e5; }
 
