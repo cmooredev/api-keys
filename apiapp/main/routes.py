@@ -21,6 +21,7 @@ main = Blueprint('main', __name__)
 def create_checkout_session():
     form = MyForm()
     if form.validate_on_submit():
+    if form.validate_server():
         plan = request.form.get('plan')
         server_id = request.form.get('server_id')
         item = []
