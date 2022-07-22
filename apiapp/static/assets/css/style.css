@@ -30,7 +30,7 @@ img {max-width:500px;}
     background-image: url('/static/assets/img/postone.png');
     background-repeat: no-repeat;
     background-position: center;
-    height: 500px;
+    height: 450px;
     background-size: cover;
 }
 
@@ -50,7 +50,10 @@ img {max-width:500px;}
   html {
     font-size: 15px;
   }
-  img {max-width:200px;}
+  .post-one{
+      background-position: center;
+      background-size: contain;
+  }
 
   .form-container .server_form {
     width: 95%;
