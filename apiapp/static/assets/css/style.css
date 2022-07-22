@@ -48,4 +48,7 @@ footer{bottom: 0; left: 0; right: 0; background-color: white;}
   .form-container .server_form {
     width: 95%;
   }
+  .server-form {
+    width: 95%;
+  }
 }
