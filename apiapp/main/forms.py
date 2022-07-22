@@ -4,7 +4,7 @@ from wtforms.validators import DataRequired
 
 class MyForm(FlaskForm):
     server_id = IntegerField('Server ID',[
-        validators=[DataRequired()],
+        validators.DataRequired(),
         validators.Regexp('^([\s\d]+)$', message='Numbers only')
         ])
 
