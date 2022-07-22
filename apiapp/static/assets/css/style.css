@@ -37,11 +37,11 @@ footer{bottom: 0; left: 0; right: 0; background-color: white;}
   text-align: center;
 }
 .main-content {
-  height: 75vh;
+  height: 100%;
 }
 
 .server-form {
-  width: 100px;
+  width: 500px;
 }
 
 
