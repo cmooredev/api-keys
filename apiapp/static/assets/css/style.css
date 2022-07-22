@@ -51,9 +51,6 @@ footer{position: absolute; bottom: 0; left: 0; right: 0; background-color: white
   html {
     font-size: 15px;
   }
-  footer {
-    position: relative;
-  }
   .form-container .server_form {
     width: 95%;
   }
