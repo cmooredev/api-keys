@@ -3,22 +3,20 @@
 {% block head %}{% endblock %}
 
 {% block body %}
-<div class="container text-center">
-      <div class="about-header px-3 py-3 pt-md-5 pb-md-4 mx-auto">
-        <h1 class="display-4 m-5">hellabots</h1>
+
+<div class="container post-one">
+  <div class="about-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 m-2">hellabots</h1>
+      <div class="container">
         <p class="lead">Providing you the best bot and automation services available.</p>
-        <div class="row">
-          <div class='col'>
-            <p>
-                New bots are being added regularly.
-                Contact us for custom requests.
-            </p>
-          </div>
-        </div>
+        <p>New bots are being added regularly.
+        Contact us for custom requests.</p>
       </div>
-      <div class="m5 container">
-        <img height="400px" src="{{ url_for('static',filename='assets/img/planets.png') }}">
-      </div>
+  </div>
+  <div class="container m-5">
+    <img height="400px" src="{{ url_for('static',filename='assets/img/planets.png') }}">
+  </div>
+
 </div>
 
 
