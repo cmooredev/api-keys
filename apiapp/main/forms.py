@@ -4,7 +4,8 @@ from wtforms.validators import DataRequired, Regexp, Length
 
 class MyForm(FlaskForm):
     server_id = StringField('Server ID', validators=[DataRequired(),
-                Regexp('^([\s\d]+)$', message='Numbers only', Length(min=5, message="Server IDs are usually 18 digits."))
+                Regexp('^([\s\d]+)$', message='Numbers only'),
+                Length(min=5, message="Server IDs are usually 18 digits.")
                 ])
 
     def validate_server(form, field):
