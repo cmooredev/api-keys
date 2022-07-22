@@ -34,6 +34,9 @@ img {max-width:400px;}
     background-size: contain;
 }
 
+.empty {
+  height: 300px;
+}
 
 .footer {
   height: 100px;
