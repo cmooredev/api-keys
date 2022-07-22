@@ -31,7 +31,7 @@ img {max-width:100%;}
   height: 100vh;
 }
 .post-one {
-  background-image: url({{ url_for('static', filename='assets/img/postone.png') }})
+    background-image: url({{ url_for('static', filename='assets/img/postone.png') }})
 }
 
 .footer {
