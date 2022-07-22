@@ -32,6 +32,10 @@ img {max-width:75%;}
 }
 .post-one{
     background-image: url('/static/assets/img/postone.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 500px;
+    background-size: cover;
 }
 
 
