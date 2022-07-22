@@ -70,7 +70,7 @@ def pricing():
 
 @main.route('/success')
 def success():
-    return render_template('success.html', id=0, plan=1)
+    return render_template('success.html')
 
 @main.route('/support')
 def support():
