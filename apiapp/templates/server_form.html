@@ -15,11 +15,9 @@
   </div>
   <div class='container text-center server-form'>
     <form action="/create-checkout-session" method="post">
-      {{ form.csrf_token }}
-      {{ form.server_id.label }} {{ form.server_id(size=18) }}
       <div class="form-check mb-4 text-left">
-        <label for="server_id" class="form-label">Server ID</label>
-        <input name="server_id" type="text" class="form-control" required="true">
+        {{ form.csrf_token }}
+        {{ form.server_id.label }} {{ form.server_id(size=18) }}
       </div>
       <div class="form-check mb-4 text-left">
         <label for="plan">Tier</label>
