@@ -1,9 +1,9 @@
 from flask_wtf import FlaskForm
-from wtforms.fields import IntegerField
+from wtforms.fields import StringField
 from wtforms.validators import DataRequired
 
 class MyForm(FlaskForm):
-    server_id = IntegerField('Server ID', validators=[DataRequired(),
+    server_id = StringField('Server ID', validators=[DataRequired(),
                 Regexp('^([\s\d]+)$', message='Numbers only')
                 ])
 
