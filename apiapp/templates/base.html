@@ -37,9 +37,12 @@
           <a class="p-2 text-dark" href="/support">Support</a>
         </nav>
   </div>
+  <div class="main-content">
+    {% block body %}{% endblock %}
+  </div>
 
   <!-- MAIN CONTENT BEGIN HERE -->
-  {% block body %}{% endblock %}
+
   <!-- MAIN CONTENT ENDS HERE -->
   <footer class="border-top box-shadow footer">
         <div class="row justify-content-center">

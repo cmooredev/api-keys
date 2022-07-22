@@ -36,9 +36,8 @@ footer{bottom: 0; left: 0; right: 0; background-color: white;}
   margin: auto;
   text-align: center;
 }
-
-.front-page {
-  height: 1000px;
+.main-content {
+  height: 100vh;
 }
 
 
@@ -52,8 +51,5 @@ footer{bottom: 0; left: 0; right: 0; background-color: white;}
   }
   .form-container .server_form {
     width: 95%;
-  }
-  .front-page {
-    height: 400px;
   }
 }
