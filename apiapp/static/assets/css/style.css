@@ -1,4 +1,10 @@
 html, body {padding:0; margin:0; height:100%; width: 100%;}
+body {
+  background-image: url('/static/assets/img/white.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
 footer{bottom: 0; left: 0; right: 0; background-color: white;}
 img {max-width:400px;}
 
@@ -25,13 +31,6 @@ img {max-width:400px;}
 
 .page {
   height: 100vh;
-}
-.post-one{
-    background-image: url('/static/assets/img/postone.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 400px;
-    background-size: contain;
 }
 
 .empty {
