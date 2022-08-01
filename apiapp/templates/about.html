@@ -43,13 +43,21 @@
   <div class="about-header px-3 py-3 pt-md-5 pb-md-4 mx-auto">
       <div class="container">
         <p class="lead">Adding the bot to your server.</p>
-        <p>After purchase, you will be provided a link to add the bot to your server.
-        Make sure the server id matches the one you provided during purchase. Once
-        the bot is added to your server, you can use the command <strong>.config</strong>
-        to set your <em>target language</em>.  After it is set, the bot will
-        translate all users with the role <strong>'Translate'</strong> into the set <em>target
-        language</em>.
-      </p>
+        <p>
+          After purchase, you will be provided a link to add the bot to your server.
+          Make sure the server id matches the one you provided during purchase.
+        </p>
+
+        <p>
+          Once the bot is added to your server, users can use the command <strong>.trconfig</strong>
+          to set their <em>target language</em>.  You must also create a <strong>'Translate'</strong> role
+          and give it to all users who wish to be translated.  If they do not select a language with
+          <strong>.trconfig</strong>, the translator will by default translate into English
+        </p>
+
+        <p>
+
+        </p>
       </div>
   </div>
 
@@ -62,15 +70,7 @@
             <strong>.trconfig </strong>: Bring up menu to select language.
           </p>
           <p>
-            <strong>.trstats </strong>: Check current language and available credits.
-          </p>
-          </div>
-        </div>
-        <div class="container">
-          <p class="lead">Commands in development</p>
-          <div class="text-left">
-          <p>
-            <strong>.trconfig @user</strong>: Select specific language to translate user into.
+            <strong>.trstats </strong>: Check available credits.
           </p>
           </div>
         </div>
