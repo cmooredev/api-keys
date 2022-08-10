@@ -4,7 +4,7 @@ import os
 import stripe
 from .api import generator
 from .forms import MyForm
-
+import pymongo
 
 
 load_dotenv()
@@ -12,6 +12,7 @@ stripe.api_key = os.getenv('STRIPE_API_KEY')
 STRIPE_PUBLIC = os.getenv('STRIPE_PUBLIC')
 ENDPOINT_SECRET = os.getenv('ENDPOINT_SECRET')
 MONGO_URI = os.getenv('MONGO_URI')
+mongodb_client = pymongo.MongoClient(MONGO_URI)
 
 db = mongodb_client["translatordb"]
 col = db["api_keys"]
