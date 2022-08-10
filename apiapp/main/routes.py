@@ -14,13 +14,6 @@ ENDPOINT_SECRET = os.getenv('ENDPOINT_SECRET')
 MONGO_URI = os.getenv('MONGO_URI')
 mongodb_client = pymongo.MongoClient(MONGO_URI)
 
-db = mongodb_client["translatordb"]
-col = db["api_keys"]
-
-credit_key = {"credit_count" : 1}
-result = col.find_one(credit_key)
-credits_global = result["total_credits"]
-
 main = Blueprint('main', __name__)
 
 #----
@@ -71,6 +64,12 @@ def index():
 
 @main.route('/about')
 def about():
+    db = mongodb_client["translatordb"]
+    col = db["api_keys"]
+
+    credit_key = {"credit_count" : 1}
+    result = col.find_one(credit_key)
+    credits_global = result["total_credits"]
     return render_template('about.html', value=credits_global)
 
 @main.route('/pricing')
