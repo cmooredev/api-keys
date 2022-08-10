@@ -18,7 +18,7 @@ db = mongodb_client["translatordb"]
 col = db["api_keys"]
 
 credit_key = {"credit_count" : 1}
-result = col.find_one(server_key)
+result = col.find_one(credit_key)
 credits_global = result["total_credits"]
 
 main = Blueprint('main', __name__)
