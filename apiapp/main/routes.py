@@ -71,7 +71,7 @@ def about():
     result = col.find_one(credit_key)
     credits_global = result["total_credits"]
     value = int(credits_global / 5)
-    return render_template('about.html', value=credits_global)
+    return render_template('about.html', value=value)
 
 @main.route('/pricing')
 def pricing():
