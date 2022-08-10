@@ -1,9 +1,12 @@
 html, body {padding:0; margin:0; height:100%; width: 100%;}
-footer{bottom: 0; left: 0; right: 0; background-color: white;}
+footer{bottom: 0; left: 0; right: 0; background-color: #116DE4; color: white;}
+header{background-color: #116DE4; color: white;}
 img {max-width: 90%;}
 
 .container {
   max-width: 960px;
+  background-color: #116DE4;
+  color: white;
 }
 
 .pricing-header {
