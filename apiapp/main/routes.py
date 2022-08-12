@@ -58,7 +58,7 @@ def create_checkout_session():
     return render_template('server_form.html', form=form)
 #----
 
-@app.context_processor
+@main.context_processor
 def utility_processor():
     db = mongodb_client["translatordb"]
     col = db["api_keys"]
