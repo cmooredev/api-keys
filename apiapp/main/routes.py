@@ -76,7 +76,7 @@ def index():
 @main.route('/about')
 def about():
 
-    return render_template('about.html', value=value)
+    return render_template('about.html')
 
 @main.route('/pricing')
 def pricing():
