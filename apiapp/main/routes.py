@@ -58,19 +58,24 @@ def create_checkout_session():
     return render_template('server_form.html', form=form)
 #----
 
-@main.route('/')
-def index():
-    return render_template('index.html')
-
-@main.route('/about')
-def about():
+@app.context_processor
+def utility_processor():
     db = mongodb_client["translatordb"]
     col = db["api_keys"]
 
     credit_key = {"credit_count" : 1}
     result = col.find_one(credit_key)
     credits_global = result["total_credits"]
-    value = int(credits_global / 5)
+    words_translated = int(credits_global / 5)
+    return dict(words_translated=words_translated)
+
+@main.route('/')
+def index():
+    return render_template('index.html')
+
+@main.route('/about')
+def about():
+
     return render_template('about.html', value=value)
 
 @main.route('/pricing')
